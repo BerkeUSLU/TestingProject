@@ -13,3 +13,4 @@ Feature: Automation Practice Sign Up page
         |                   | Invalid email address.                                                                                              |
         | invalidemail.com  | Invalid email address.                                                                                              |
         | valid@email.com   | An account using this email address has already been registered. Please enter a valid password or request a new one.|
+        | invalid@          | Invalid email address.                                                                                              |
