@@ -12,7 +12,6 @@ import java.util.Optional;
 public class HomePage {
 
     private static final String PAGE_URL = "http://automationpractice.com/";
-
     private static final By LOGIN_ERROR = By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li");
     private static final By CONTACT_ERROR = By.cssSelector("#center_column > div > ol > li");
     private static final By CART_ERROR = By.cssSelector("#center_column > p");
