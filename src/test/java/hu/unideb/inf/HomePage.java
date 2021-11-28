@@ -12,11 +12,17 @@ import java.util.Optional;
 public class HomePage {
 
     private static final String PAGE_URL = "http://automationpractice.com/";
+
     private static final By LOGIN_ERROR = By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li");
+
     private static final By CONTACT_ERROR = By.cssSelector("#center_column > div > ol > li");
+
     private static final By CART_ERROR = By.cssSelector("#center_column > p");
+
     private static final By SIGNUP_ERROR = By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ol[1]/li[1]");
+
     private static final By SEARCH_MESSAGE = By.cssSelector("#center_column > h1 > span.heading-counter");
+
     private static final By SEARCH_ERROR = By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/p");
 
     @FindBy(className = "login")
@@ -113,11 +119,11 @@ public class HomePage {
 
     private Optional<String> getErrorMessage(By errorLocator) {
         Optional<WebElement> error = getError(errorLocator);
-        if (!error.isPresent()) {
-            return Optional.empty();
-        } else {
+        if (error.isPresent()) {
             WebElement errorElement = error.get();
             return Optional.of(errorElement.getText());
+        } else {
+            return Optional.empty();
         }
     }
 
