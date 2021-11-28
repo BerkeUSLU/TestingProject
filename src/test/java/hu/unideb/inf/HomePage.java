@@ -113,11 +113,11 @@ public class HomePage {
 
     private Optional<String> getErrorMessage(By errorLocator) {
         Optional<WebElement> error = getError(errorLocator);
-        if (error.isPresent()) {
+        if (!error.isPresent()) {
+            return Optional.empty();
+        } else {
             WebElement errorElement = error.get();
             return Optional.of(errorElement.getText());
-        } else {
-            return Optional.empty();
         }
     }
 
